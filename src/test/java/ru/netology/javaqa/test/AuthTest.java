@@ -21,7 +21,6 @@ class AuthTest {
     }
 
     @Test
-
     void shouldSuccessfulLoginIfRegisteredActiveUser() {
         var registeredUser = getRegisteredUser("active");
         $("[data-test-id='login'] input").setValue(registeredUser.getLogin());
@@ -33,7 +32,6 @@ class AuthTest {
     }
 
     @Test
-
     void shouldGetErrorIfNotRegisteredUser() {
         var notRegisteredUser = getUser("active");
         $("[data-test-id='login'] input").setValue(notRegisteredUser.getLogin());
@@ -45,7 +43,6 @@ class AuthTest {
     }
 
     @Test
-
     void shouldGetErrorIfBlockedUser() {
         var blockedUser = getRegisteredUser("blocked");
         $("[data-test-id='login'] input").setValue(blockedUser.getLogin());
@@ -57,7 +54,6 @@ class AuthTest {
     }
 
     @Test
-
     void shouldGetErrorIfWrongLogin() {
         var registeredUser = getRegisteredUser("active");
         var wrongLogin = getRandomLogin();
@@ -70,7 +66,6 @@ class AuthTest {
     }
 
     @Test
-
     void shouldGetErrorIfWrongPassword() {
         var registeredUser = getRegisteredUser("active");
         var wrongPassword = getRandomPassword();
